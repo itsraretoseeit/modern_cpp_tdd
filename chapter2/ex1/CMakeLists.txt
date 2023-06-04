@@ -10,6 +10,7 @@ set(sources
    test/main.cpp 
    test/SoundexTest.cpp
    test/CharUtilsTest.cpp
+   test/StringUtilsTest.cpp
    src/CharUtils.cpp
    src/StringUtils.cpp
    )
