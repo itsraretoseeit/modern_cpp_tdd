@@ -9,6 +9,7 @@ include_directories(/opt/homebrew/include)
 set(sources 
    test/main.cpp 
    test/SoundexTest.cpp
+   test/CharUtilsTest.cpp
    src/CharUtils.cpp
    src/StringUtils.cpp
    )
