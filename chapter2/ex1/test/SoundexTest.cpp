@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "Soundex.hpp"
+#include "../include/Soundex.hpp"
 
 using namespace testing;
 

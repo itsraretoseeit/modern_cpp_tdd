@@ -1,15 +1,15 @@
 #pragma once
 #include <string>
-#include "CharUtil.h"
-#include "StringUtil.h"
+#include "CharUtils.hpp"
+#include "StringUtils.hpp"
 
 class Soundex {
 public:
     std::string encode(const std::string& word) const {
         // return zeroPad(upperFront(head(word)) + tail(encodedDigits(word)));
-        return stringutil::zeroPad(
-            stringutil::upperFront(stringutil::head(word)) +
-                stringutil::tail(encodedDigits(word)),
+        return stringutils::zeroPad(
+            stringutils::upperFront(stringutils::head(word)) +
+                stringutils::tail(encodedDigits(word)),
             MaxCodeLength
         );
     }
@@ -23,7 +23,7 @@ public:
             {'m', "5"}, {'n', "5"},
             {'r', "6"}
         };
-        auto it = encodings.find(charutil::lower(letter));
+        auto it = encodings.find(charutils::lower(letter));
         return it == encodings.end() ? NotADigit : it->second;
     }
 
@@ -53,7 +53,7 @@ private:
     void encodeLetter(std::string &encoding, char letter, char lastLetter) const {
         auto digit = encodedDigit(letter);
         if (digit != NotADigit && 
-                            (digit != lastDigit(encoding) || charutil::isVowel(lastLetter)))
+                            (digit != lastDigit(encoding) || charutils::isVowel(lastLetter)))
             encoding += digit;
     }
 
