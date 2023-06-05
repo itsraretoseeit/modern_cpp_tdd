@@ -55,3 +55,11 @@ TEST_F(SoundexEncoding, IgnoresCaseWhenEncodingConsonants) {
 TEST_F(SoundexEncoding, DoesNotCombineDuplicateEncodingsSeparatedByVowels) {
     ASSERT_THAT(soundex.encode("Jbob"), Eq("J110"));
 }
+
+TEST_F(SoundexEncoding, IgnoresWordSeparatos) {
+    ASSERT_THAT(soundex.encode("A. ,:;cdl"), Eq("A234"));
+}
+
+TEST_F(SoundexEncoding, ReturnsNothingOnEmptyString) {
+    ASSERT_THAT(soundex.encode(""), Eq(""));
+}
